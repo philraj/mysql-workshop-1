@@ -1,24 +1,14 @@
 statements:
 create database Barn;
-create table BarnStats (`numRoosters` int, `numHens` int, `numChicks` int, `date` timestamp);
-create table Chickens (`id` int auto_increment primary key, `birthday` timestamp);
+create table Chickens (`id` int auto_increment primary key, `birthday` timestamp, `death` datetime, `gender` enum('male', 'female'));
 
 result:
-
-mysql> describe BarnStats;
-+-------------+-----------+------+-----+-------------------+-----------------------------+
-| Field       | Type      | Null | Key | Default           | Extra                       |
-+-------------+-----------+------+-----+-------------------+-----------------------------+
-| numRoosters | int(11)   | YES  |     | NULL              |                             |
-| numHens     | int(11)   | YES  |     | NULL              |                             |
-| numChicks   | int(11)   | YES  |     | NULL              |                             |
-| date        | timestamp | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
-+-------------+-----------+------+-----+-------------------+-----------------------------+
-
 mysql> describe Chickens;
-+----------+-----------+------+-----+-------------------+-----------------------------+
-| Field    | Type      | Null | Key | Default           | Extra                       |
-+----------+-----------+------+-----+-------------------+-----------------------------+
-| id       | int(11)   | NO   | PRI | NULL              | auto_increment              |
-| birthday | timestamp | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
-+----------+-----------+------+-----+-------------------+-----------------------------+
++----------+-----------------------+------+-----+-------------------+-----------------------------+
+| Field    | Type                  | Null | Key | Default           | Extra                       |
++----------+-----------------------+------+-----+-------------------+-----------------------------+
+| id       | int(11)               | NO   | PRI | NULL              | auto_increment              |
+| birthday | timestamp             | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| death    | datetime              | YES  |     | NULL              |                             |
+| gender   | enum('male','female') | YES  |     | NULL              |                             |
++----------+-----------------------+------+-----+-------------------+-----------------------------+
