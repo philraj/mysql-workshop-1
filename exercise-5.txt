@@ -1,0 +1,18 @@
+statements:
+create table `Account` (`id` int);
+create table AddressBook (`book` text);
+create table `Entry` (`first` text, `last` text, `address` text);
+create table `Test` (`test column` int);
+
+result:
+mysql> show tables
+    -> ;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| AddressBook                     |
+| Entry                           |
+| Test                            |
++---------------------------------+
+4 rows in set (0.00 sec)
