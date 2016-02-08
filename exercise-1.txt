@@ -1,0 +1,7 @@
+statements used:
+
+mysql-ctl start
+mysql -u philraj
+
+results:
+server started and logged in
